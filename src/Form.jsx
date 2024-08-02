@@ -43,7 +43,7 @@ const JsonForm = () => {
       );
 
       if (!res.ok) {
-        throw new Error(Network response was not ok: ${res.statusText});
+        throw new Error(`Network response was not ok: ${res.statusText}`);
       }
 
       const result = await res.json();
@@ -53,7 +53,7 @@ const JsonForm = () => {
     } catch (error) {
       console.log(error);
       setError(
-        Invalid JSON format or API error. Please correct it. Error: ${error.message}
+        `Invalid JSON format or API error. Please correct it. Error: ${error.message}`
       );
     }
   };
